@@ -1,0 +1,1642 @@
+#! C:/Program Files/Nuke10.5v4/nuke-10.5.4.dll -nx
+version 10.5 v4
+Gizmo {
+ tile_color 0xe06cdcff
+ gl_color 0x10dd45ff
+ addUserKnob {20 Unpremult}
+ addUserKnob {41 channels l divide T Unpremult1.channels}
+ addUserKnob {41 alpha l by T Unpremult1.alpha}
+ addUserKnob {41 invert T Unpremult1.invert}
+ addUserKnob {20 amb_dif}
+ addUserKnob {41 channels_1 l channels T Grade_amb_fill.channels}
+ addUserKnob {41 blackpoint T Grade_amb_fill.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped l "panel dropped state" T Grade_amb_fill.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint T Grade_amb_fill.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped l "panel dropped state" T Grade_amb_fill.whitepoint_panelDropped}
+ addUserKnob {41 black l lift T Grade_amb_fill.black}
+ addUserKnob {41 black_panelDropped l "panel dropped state" T Grade_amb_fill.black_panelDropped}
+ addUserKnob {41 white l gain T Grade_amb_fill.white}
+ addUserKnob {41 white_panelDropped l "panel dropped state" T Grade_amb_fill.white_panelDropped}
+ addUserKnob {41 multiply T Grade_amb_fill.multiply}
+ addUserKnob {41 multiply_panelDropped l "panel dropped state" T Grade_amb_fill.multiply_panelDropped}
+ addUserKnob {41 add l offset T Grade_amb_fill.add}
+ addUserKnob {41 add_panelDropped l "panel dropped state" T Grade_amb_fill.add_panelDropped}
+ addUserKnob {41 gamma T Grade_amb_fill.gamma}
+ addUserKnob {41 gamma_panelDropped l "panel dropped state" T Grade_amb_fill.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse T Grade_amb_fill.reverse}
+ addUserKnob {41 black_clamp l "black clamp" T Grade_amb_fill.black_clamp}
+ addUserKnob {41 white_clamp l "white clamp" T Grade_amb_fill.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask l "" -STARTLINE T Grade_amb_fill.maskChannelMask}
+ addUserKnob {41 maskChannelInput l "" -STARTLINE T Grade_amb_fill.maskChannelInput}
+ addUserKnob {41 inject T Grade_amb_fill.inject}
+ addUserKnob {41 invert_mask l invert T Grade_amb_fill.invert_mask}
+ addUserKnob {41 fringe T Grade_amb_fill.fringe}
+ addUserKnob {41 unpremult l "(un)premult by" T Grade_amb_fill.unpremult}
+ addUserKnob {41 invert_unpremult l invert T Grade_amb_fill.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance l "" -STARTLINE T Grade_amb_fill.enable_mix_luminance}
+ addUserKnob {41 mix_luminance l "" -STARTLINE T Grade_amb_fill.mix_luminance}
+ addUserKnob {41 mix T Grade_amb_fill.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect -STARTLINE T ""}
+ addUserKnob {41 channels_2 l channels T ColorCorrect_amb_fill.channels}
+ addUserKnob {20 master l "@b;master" n 1}
+ addUserKnob {41 saturation T ColorCorrect_amb_fill.saturation}
+ addUserKnob {41 saturation_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.saturation_panelDropped}
+ addUserKnob {41 contrast T ColorCorrect_amb_fill.contrast}
+ addUserKnob {41 contrast_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.contrast_panelDropped}
+ addUserKnob {41 gamma_1 l gamma T ColorCorrect_amb_fill.gamma}
+ addUserKnob {41 gamma_panelDropped_1 l "panel dropped state" T ColorCorrect_amb_fill.gamma_panelDropped}
+ addUserKnob {41 gain T ColorCorrect_amb_fill.gain}
+ addUserKnob {41 gain_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.gain_panelDropped}
+ addUserKnob {41 offset T ColorCorrect_amb_fill.offset}
+ addUserKnob {41 offset_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation l saturation T ColorCorrect_amb_fill.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast l contrast T ColorCorrect_amb_fill.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma l gamma T ColorCorrect_amb_fill.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain l gain T ColorCorrect_amb_fill.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset l offset T ColorCorrect_amb_fill.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation l saturation T ColorCorrect_amb_fill.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast l contrast T ColorCorrect_amb_fill.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma l gamma T ColorCorrect_amb_fill.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain l gain T ColorCorrect_amb_fill.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset l offset T ColorCorrect_amb_fill.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation l saturation T ColorCorrect_amb_fill.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast l contrast T ColorCorrect_amb_fill.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma l gamma T ColorCorrect_amb_fill.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain l gain T ColorCorrect_amb_fill.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset l offset T ColorCorrect_amb_fill.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped l "panel dropped state" T ColorCorrect_amb_fill.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 fill_dif}
+ addUserKnob {41 channels_3 l channels T Grade_diffuse_fill.channels}
+ addUserKnob {41 blackpoint_1 l blackpoint T Grade_diffuse_fill.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_1 l whitepoint T Grade_diffuse_fill.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.whitepoint_panelDropped}
+ addUserKnob {41 black_1 l lift T Grade_diffuse_fill.black}
+ addUserKnob {41 black_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.black_panelDropped}
+ addUserKnob {41 white_1 l gain T Grade_diffuse_fill.white}
+ addUserKnob {41 white_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.white_panelDropped}
+ addUserKnob {41 multiply_1 l multiply T Grade_diffuse_fill.multiply}
+ addUserKnob {41 multiply_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.multiply_panelDropped}
+ addUserKnob {41 add_1 l offset T Grade_diffuse_fill.add}
+ addUserKnob {41 add_panelDropped_1 l "panel dropped state" T Grade_diffuse_fill.add_panelDropped}
+ addUserKnob {41 gamma_2 l gamma T Grade_diffuse_fill.gamma}
+ addUserKnob {41 gamma_panelDropped_2 l "panel dropped state" T Grade_diffuse_fill.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_1 l reverse T Grade_diffuse_fill.reverse}
+ addUserKnob {41 black_clamp_1 l "black clamp" T Grade_diffuse_fill.black_clamp}
+ addUserKnob {41 white_clamp_1 l "white clamp" T Grade_diffuse_fill.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_1 l "" -STARTLINE T Grade_diffuse_fill.maskChannelMask}
+ addUserKnob {41 maskChannelInput_1 l "" -STARTLINE T Grade_diffuse_fill.maskChannelInput}
+ addUserKnob {41 inject_1 l inject T Grade_diffuse_fill.inject}
+ addUserKnob {41 invert_mask_1 l invert T Grade_diffuse_fill.invert_mask}
+ addUserKnob {41 fringe_1 l fringe T Grade_diffuse_fill.fringe}
+ addUserKnob {41 unpremult_1 l "(un)premult by" T Grade_diffuse_fill.unpremult}
+ addUserKnob {41 invert_unpremult_1 l invert T Grade_diffuse_fill.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_1 l "" -STARTLINE T Grade_diffuse_fill.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_1 l "" -STARTLINE T Grade_diffuse_fill.mix_luminance}
+ addUserKnob {41 mix_1 l mix T Grade_diffuse_fill.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_1 l Colorcorrect}
+ addUserKnob {41 channels_4 l channels T ColorCorrect_diffuse_fill.channels}
+ addUserKnob {20 master_1 l "@b;master" n 1}
+ addUserKnob {41 saturation_1 l saturation T ColorCorrect_diffuse_fill.saturation}
+ addUserKnob {41 saturation_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.saturation_panelDropped}
+ addUserKnob {41 contrast_1 l contrast T ColorCorrect_diffuse_fill.contrast}
+ addUserKnob {41 contrast_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.contrast_panelDropped}
+ addUserKnob {41 gamma_3 l gamma T ColorCorrect_diffuse_fill.gamma}
+ addUserKnob {41 gamma_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_fill.gamma_panelDropped}
+ addUserKnob {41 gain_1 l gain T ColorCorrect_diffuse_fill.gain}
+ addUserKnob {41 gain_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.gain_panelDropped}
+ addUserKnob {41 offset_1 l offset T ColorCorrect_diffuse_fill.offset}
+ addUserKnob {41 offset_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_1 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_1 l saturation T ColorCorrect_diffuse_fill.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_1 l contrast T ColorCorrect_diffuse_fill.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_1 l gamma T ColorCorrect_diffuse_fill.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_1 l gain T ColorCorrect_diffuse_fill.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_1 l offset T ColorCorrect_diffuse_fill.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_1 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_1 l saturation T ColorCorrect_diffuse_fill.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_1 l contrast T ColorCorrect_diffuse_fill.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_1 l gamma T ColorCorrect_diffuse_fill.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_1 l gain T ColorCorrect_diffuse_fill.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_1 l offset T ColorCorrect_diffuse_fill.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_1 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_1 l saturation T ColorCorrect_diffuse_fill.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_1 l contrast T ColorCorrect_diffuse_fill.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_1 l gamma T ColorCorrect_diffuse_fill.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_1 l gain T ColorCorrect_diffuse_fill.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_1 l offset T ColorCorrect_diffuse_fill.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_1 l "panel dropped state" T ColorCorrect_diffuse_fill.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 key_dif}
+ addUserKnob {41 channels_5 l channels T Grade_diffuse_key.channels}
+ addUserKnob {41 blackpoint_2 l blackpoint T Grade_diffuse_key.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_2 l whitepoint T Grade_diffuse_key.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.whitepoint_panelDropped}
+ addUserKnob {41 black_2 l lift T Grade_diffuse_key.black}
+ addUserKnob {41 black_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.black_panelDropped}
+ addUserKnob {41 white_2 l gain T Grade_diffuse_key.white}
+ addUserKnob {41 white_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.white_panelDropped}
+ addUserKnob {41 multiply_2 l multiply T Grade_diffuse_key.multiply}
+ addUserKnob {41 multiply_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.multiply_panelDropped}
+ addUserKnob {41 add_2 l offset T Grade_diffuse_key.add}
+ addUserKnob {41 add_panelDropped_2 l "panel dropped state" T Grade_diffuse_key.add_panelDropped}
+ addUserKnob {41 gamma_4 l gamma T Grade_diffuse_key.gamma}
+ addUserKnob {41 gamma_panelDropped_4 l "panel dropped state" T Grade_diffuse_key.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_2 l reverse T Grade_diffuse_key.reverse}
+ addUserKnob {41 black_clamp_2 l "black clamp" T Grade_diffuse_key.black_clamp}
+ addUserKnob {41 white_clamp_2 l "white clamp" T Grade_diffuse_key.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_2 l "" -STARTLINE T Grade_diffuse_key.maskChannelMask}
+ addUserKnob {41 maskChannelInput_2 l "" -STARTLINE T Grade_diffuse_key.maskChannelInput}
+ addUserKnob {41 inject_2 l inject T Grade_diffuse_key.inject}
+ addUserKnob {41 invert_mask_2 l invert T Grade_diffuse_key.invert_mask}
+ addUserKnob {41 fringe_2 l fringe T Grade_diffuse_key.fringe}
+ addUserKnob {41 unpremult_2 l "(un)premult by" T Grade_diffuse_key.unpremult}
+ addUserKnob {41 invert_unpremult_2 l invert T Grade_diffuse_key.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_2 l "" -STARTLINE T Grade_diffuse_key.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_2 l "" -STARTLINE T Grade_diffuse_key.mix_luminance}
+ addUserKnob {41 mix_2 l mix T Grade_diffuse_key.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_2 l Colorcorrect}
+ addUserKnob {41 channels_6 l channels T ColorCorrect_diffuse_key.channels}
+ addUserKnob {20 master_2 l "@b;master" n 1}
+ addUserKnob {41 saturation_2 l saturation T ColorCorrect_diffuse_key.saturation}
+ addUserKnob {41 saturation_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.saturation_panelDropped}
+ addUserKnob {41 contrast_2 l contrast T ColorCorrect_diffuse_key.contrast}
+ addUserKnob {41 contrast_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.contrast_panelDropped}
+ addUserKnob {41 gamma_5 l gamma T ColorCorrect_diffuse_key.gamma}
+ addUserKnob {41 gamma_panelDropped_5 l "panel dropped state" T ColorCorrect_diffuse_key.gamma_panelDropped}
+ addUserKnob {41 gain_2 l gain T ColorCorrect_diffuse_key.gain}
+ addUserKnob {41 gain_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.gain_panelDropped}
+ addUserKnob {41 offset_2 l offset T ColorCorrect_diffuse_key.offset}
+ addUserKnob {41 offset_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_2 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_2 l saturation T ColorCorrect_diffuse_key.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_2 l contrast T ColorCorrect_diffuse_key.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_2 l gamma T ColorCorrect_diffuse_key.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_2 l gain T ColorCorrect_diffuse_key.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_2 l offset T ColorCorrect_diffuse_key.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_2 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_2 l saturation T ColorCorrect_diffuse_key.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_2 l contrast T ColorCorrect_diffuse_key.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_2 l gamma T ColorCorrect_diffuse_key.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_2 l gain T ColorCorrect_diffuse_key.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_2 l offset T ColorCorrect_diffuse_key.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_2 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_2 l saturation T ColorCorrect_diffuse_key.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_2 l contrast T ColorCorrect_diffuse_key.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_2 l gamma T ColorCorrect_diffuse_key.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_2 l gain T ColorCorrect_diffuse_key.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_2 l offset T ColorCorrect_diffuse_key.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_2 l "panel dropped state" T ColorCorrect_diffuse_key.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 rim_diff}
+ addUserKnob {41 channels_7 l channels T Grade_diffuse_rim.channels}
+ addUserKnob {41 blackpoint_3 l blackpoint T Grade_diffuse_rim.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_3 l whitepoint T Grade_diffuse_rim.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.whitepoint_panelDropped}
+ addUserKnob {41 black_3 l lift T Grade_diffuse_rim.black}
+ addUserKnob {41 black_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.black_panelDropped}
+ addUserKnob {41 white_3 l gain T Grade_diffuse_rim.white}
+ addUserKnob {41 white_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.white_panelDropped}
+ addUserKnob {41 multiply_3 l multiply T Grade_diffuse_rim.multiply}
+ addUserKnob {41 multiply_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.multiply_panelDropped}
+ addUserKnob {41 add_3 l offset T Grade_diffuse_rim.add}
+ addUserKnob {41 add_panelDropped_3 l "panel dropped state" T Grade_diffuse_rim.add_panelDropped}
+ addUserKnob {41 gamma_6 l gamma T Grade_diffuse_rim.gamma}
+ addUserKnob {41 gamma_panelDropped_6 l "panel dropped state" T Grade_diffuse_rim.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_3 l reverse T Grade_diffuse_rim.reverse}
+ addUserKnob {41 black_clamp_3 l "black clamp" T Grade_diffuse_rim.black_clamp}
+ addUserKnob {41 white_clamp_3 l "white clamp" T Grade_diffuse_rim.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_3 l "" -STARTLINE T Grade_diffuse_rim.maskChannelMask}
+ addUserKnob {41 maskChannelInput_3 l "" -STARTLINE T Grade_diffuse_rim.maskChannelInput}
+ addUserKnob {41 inject_3 l inject T Grade_diffuse_rim.inject}
+ addUserKnob {41 invert_mask_3 l invert T Grade_diffuse_rim.invert_mask}
+ addUserKnob {41 fringe_3 l fringe T Grade_diffuse_rim.fringe}
+ addUserKnob {41 unpremult_3 l "(un)premult by" T Grade_diffuse_rim.unpremult}
+ addUserKnob {41 invert_unpremult_3 l invert T Grade_diffuse_rim.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_3 l "" -STARTLINE T Grade_diffuse_rim.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_3 l "" -STARTLINE T Grade_diffuse_rim.mix_luminance}
+ addUserKnob {41 mix_3 l mix T Grade_diffuse_rim.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_3 l Colorcorrect}
+ addUserKnob {41 channels_8 l channels T ColorCorrect_diffuse_rim.channels}
+ addUserKnob {20 master_3 l "@b;master" n 1}
+ addUserKnob {41 saturation_3 l saturation T ColorCorrect_diffuse_rim.saturation}
+ addUserKnob {41 saturation_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.saturation_panelDropped}
+ addUserKnob {41 contrast_3 l contrast T ColorCorrect_diffuse_rim.contrast}
+ addUserKnob {41 contrast_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.contrast_panelDropped}
+ addUserKnob {41 gamma_7 l gamma T ColorCorrect_diffuse_rim.gamma}
+ addUserKnob {41 gamma_panelDropped_7 l "panel dropped state" T ColorCorrect_diffuse_rim.gamma_panelDropped}
+ addUserKnob {41 gain_3 l gain T ColorCorrect_diffuse_rim.gain}
+ addUserKnob {41 gain_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.gain_panelDropped}
+ addUserKnob {41 offset_3 l offset T ColorCorrect_diffuse_rim.offset}
+ addUserKnob {41 offset_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_3 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_3 l saturation T ColorCorrect_diffuse_rim.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_3 l contrast T ColorCorrect_diffuse_rim.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_3 l gamma T ColorCorrect_diffuse_rim.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_3 l gain T ColorCorrect_diffuse_rim.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_3 l offset T ColorCorrect_diffuse_rim.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_3 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_3 l saturation T ColorCorrect_diffuse_rim.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_3 l contrast T ColorCorrect_diffuse_rim.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_3 l gamma T ColorCorrect_diffuse_rim.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_3 l gain T ColorCorrect_diffuse_rim.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_3 l offset T ColorCorrect_diffuse_rim.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_3 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_3 l saturation T ColorCorrect_diffuse_rim.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_3 l contrast T ColorCorrect_diffuse_rim.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_3 l gamma T ColorCorrect_diffuse_rim.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_3 l gain T ColorCorrect_diffuse_rim.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_3 l offset T ColorCorrect_diffuse_rim.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_3 l "panel dropped state" T ColorCorrect_diffuse_rim.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 amb_spec}
+ addUserKnob {41 channels_15 l channels T Grade_amb_spc.channels}
+ addUserKnob {41 blackpoint_7 l blackpoint T Grade_amb_spc.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_7 l "panel dropped state" T Grade_amb_spc.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_7 l whitepoint T Grade_amb_spc.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_7 l "panel dropped state" T Grade_amb_spc.whitepoint_panelDropped}
+ addUserKnob {41 black_7 l lift T Grade_amb_spc.black}
+ addUserKnob {41 black_panelDropped_7 l "panel dropped state" T Grade_amb_spc.black_panelDropped}
+ addUserKnob {41 white_7 l gain T Grade_amb_spc.white}
+ addUserKnob {41 white_panelDropped_7 l "panel dropped state" T Grade_amb_spc.white_panelDropped}
+ addUserKnob {41 multiply_7 l multiply T Grade_amb_spc.multiply}
+ addUserKnob {41 multiply_panelDropped_7 l "panel dropped state" T Grade_amb_spc.multiply_panelDropped}
+ addUserKnob {41 add_7 l offset T Grade_amb_spc.add}
+ addUserKnob {41 add_panelDropped_7 l "panel dropped state" T Grade_amb_spc.add_panelDropped}
+ addUserKnob {41 gamma_14 l gamma T Grade_amb_spc.gamma}
+ addUserKnob {41 gamma_panelDropped_14 l "panel dropped state" T Grade_amb_spc.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_7 l reverse T Grade_amb_spc.reverse}
+ addUserKnob {41 black_clamp_7 l "black clamp" T Grade_amb_spc.black_clamp}
+ addUserKnob {41 white_clamp_7 l "white clamp" T Grade_amb_spc.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_7 l "" -STARTLINE T Grade_amb_spc.maskChannelMask}
+ addUserKnob {41 maskChannelInput_7 l "" -STARTLINE T Grade_amb_spc.maskChannelInput}
+ addUserKnob {41 inject_7 l inject T Grade_amb_spc.inject}
+ addUserKnob {41 invert_mask_7 l invert T Grade_amb_spc.invert_mask}
+ addUserKnob {41 fringe_7 l fringe T Grade_amb_spc.fringe}
+ addUserKnob {41 unpremult_7 l "(un)premult by" T Grade_amb_spc.unpremult}
+ addUserKnob {41 invert_unpremult_7 l invert T Grade_amb_spc.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_7 l "" -STARTLINE T Grade_amb_spc.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_7 l "" -STARTLINE T Grade_amb_spc.mix_luminance}
+ addUserKnob {41 mix_7 l mix T Grade_amb_spc.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_7 l Colorcorrect}
+ addUserKnob {41 channels_16 l channels T ColorCorrect_amb_spc.channels}
+ addUserKnob {20 master_7 l "@b;master" n 1}
+ addUserKnob {41 saturation_7 l saturation T ColorCorrect_amb_spc.saturation}
+ addUserKnob {41 saturation_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.saturation_panelDropped}
+ addUserKnob {41 contrast_7 l contrast T ColorCorrect_amb_spc.contrast}
+ addUserKnob {41 contrast_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.contrast_panelDropped}
+ addUserKnob {41 gamma_15 l gamma T ColorCorrect_amb_spc.gamma}
+ addUserKnob {41 gamma_panelDropped_15 l "panel dropped state" T ColorCorrect_amb_spc.gamma_panelDropped}
+ addUserKnob {41 gain_7 l gain T ColorCorrect_amb_spc.gain}
+ addUserKnob {41 gain_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.gain_panelDropped}
+ addUserKnob {41 offset_7 l offset T ColorCorrect_amb_spc.offset}
+ addUserKnob {41 offset_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_7 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_7 l saturation T ColorCorrect_amb_spc.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_7 l contrast T ColorCorrect_amb_spc.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_7 l gamma T ColorCorrect_amb_spc.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_7 l gain T ColorCorrect_amb_spc.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_7 l offset T ColorCorrect_amb_spc.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_7 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_7 l saturation T ColorCorrect_amb_spc.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_7 l contrast T ColorCorrect_amb_spc.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_7 l gamma T ColorCorrect_amb_spc.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_7 l gain T ColorCorrect_amb_spc.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_7 l offset T ColorCorrect_amb_spc.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_7 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_7 l saturation T ColorCorrect_amb_spc.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_7 l contrast T ColorCorrect_amb_spc.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_7 l gamma T ColorCorrect_amb_spc.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_7 l gain T ColorCorrect_amb_spc.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_7 l offset T ColorCorrect_amb_spc.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_7 l "panel dropped state" T ColorCorrect_amb_spc.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 key_spec}
+ addUserKnob {41 channels_9 l channels T Grade_specular_key.channels}
+ addUserKnob {41 blackpoint_4 l blackpoint T Grade_specular_key.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_4 l "panel dropped state" T Grade_specular_key.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_4 l whitepoint T Grade_specular_key.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_4 l "panel dropped state" T Grade_specular_key.whitepoint_panelDropped}
+ addUserKnob {41 black_4 l lift T Grade_specular_key.black}
+ addUserKnob {41 black_panelDropped_4 l "panel dropped state" T Grade_specular_key.black_panelDropped}
+ addUserKnob {41 white_4 l gain T Grade_specular_key.white}
+ addUserKnob {41 white_panelDropped_4 l "panel dropped state" T Grade_specular_key.white_panelDropped}
+ addUserKnob {41 multiply_4 l multiply T Grade_specular_key.multiply}
+ addUserKnob {41 multiply_panelDropped_4 l "panel dropped state" T Grade_specular_key.multiply_panelDropped}
+ addUserKnob {41 add_4 l offset T Grade_specular_key.add}
+ addUserKnob {41 add_panelDropped_4 l "panel dropped state" T Grade_specular_key.add_panelDropped}
+ addUserKnob {41 gamma_8 l gamma T Grade_specular_key.gamma}
+ addUserKnob {41 gamma_panelDropped_8 l "panel dropped state" T Grade_specular_key.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_4 l reverse T Grade_specular_key.reverse}
+ addUserKnob {41 black_clamp_4 l "black clamp" T Grade_specular_key.black_clamp}
+ addUserKnob {41 white_clamp_4 l "white clamp" T Grade_specular_key.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_4 l "" -STARTLINE T Grade_specular_key.maskChannelMask}
+ addUserKnob {41 maskChannelInput_4 l "" -STARTLINE T Grade_specular_key.maskChannelInput}
+ addUserKnob {41 inject_4 l inject T Grade_specular_key.inject}
+ addUserKnob {41 invert_mask_4 l invert T Grade_specular_key.invert_mask}
+ addUserKnob {41 fringe_4 l fringe T Grade_specular_key.fringe}
+ addUserKnob {41 unpremult_4 l "(un)premult by" T Grade_specular_key.unpremult}
+ addUserKnob {41 invert_unpremult_4 l invert T Grade_specular_key.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_4 l "" -STARTLINE T Grade_specular_key.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_4 l "" -STARTLINE T Grade_specular_key.mix_luminance}
+ addUserKnob {41 mix_4 l mix T Grade_specular_key.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_4 l Colorcorrect}
+ addUserKnob {41 channels_10 l channels T ColorCorrect_specular_key.channels}
+ addUserKnob {20 master_4 l "@b;master" n 1}
+ addUserKnob {41 saturation_4 l saturation T ColorCorrect_specular_key.saturation}
+ addUserKnob {41 saturation_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.saturation_panelDropped}
+ addUserKnob {41 contrast_4 l contrast T ColorCorrect_specular_key.contrast}
+ addUserKnob {41 contrast_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.contrast_panelDropped}
+ addUserKnob {41 gamma_9 l gamma T ColorCorrect_specular_key.gamma}
+ addUserKnob {41 gamma_panelDropped_9 l "panel dropped state" T ColorCorrect_specular_key.gamma_panelDropped}
+ addUserKnob {41 gain_4 l gain T ColorCorrect_specular_key.gain}
+ addUserKnob {41 gain_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.gain_panelDropped}
+ addUserKnob {41 offset_4 l offset T ColorCorrect_specular_key.offset}
+ addUserKnob {41 offset_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_4 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_4 l saturation T ColorCorrect_specular_key.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_4 l contrast T ColorCorrect_specular_key.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_4 l gamma T ColorCorrect_specular_key.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_4 l gain T ColorCorrect_specular_key.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_4 l offset T ColorCorrect_specular_key.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_4 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_4 l saturation T ColorCorrect_specular_key.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_4 l contrast T ColorCorrect_specular_key.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_4 l gamma T ColorCorrect_specular_key.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_4 l gain T ColorCorrect_specular_key.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_4 l offset T ColorCorrect_specular_key.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_4 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_4 l saturation T ColorCorrect_specular_key.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_4 l contrast T ColorCorrect_specular_key.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_4 l gamma T ColorCorrect_specular_key.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_4 l gain T ColorCorrect_specular_key.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_4 l offset T ColorCorrect_specular_key.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_4 l "panel dropped state" T ColorCorrect_specular_key.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 fill_spec}
+ addUserKnob {41 channels_11 l channels T Grade_specular_fill.channels}
+ addUserKnob {41 blackpoint_5 l blackpoint T Grade_specular_fill.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_5 l "panel dropped state" T Grade_specular_fill.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_5 l whitepoint T Grade_specular_fill.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_5 l "panel dropped state" T Grade_specular_fill.whitepoint_panelDropped}
+ addUserKnob {41 black_5 l lift T Grade_specular_fill.black}
+ addUserKnob {41 black_panelDropped_5 l "panel dropped state" T Grade_specular_fill.black_panelDropped}
+ addUserKnob {41 white_5 l gain T Grade_specular_fill.white}
+ addUserKnob {41 white_panelDropped_5 l "panel dropped state" T Grade_specular_fill.white_panelDropped}
+ addUserKnob {41 multiply_5 l multiply T Grade_specular_fill.multiply}
+ addUserKnob {41 multiply_panelDropped_5 l "panel dropped state" T Grade_specular_fill.multiply_panelDropped}
+ addUserKnob {41 add_5 l offset T Grade_specular_fill.add}
+ addUserKnob {41 add_panelDropped_5 l "panel dropped state" T Grade_specular_fill.add_panelDropped}
+ addUserKnob {41 gamma_10 l gamma T Grade_specular_fill.gamma}
+ addUserKnob {41 gamma_panelDropped_10 l "panel dropped state" T Grade_specular_fill.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_5 l reverse T Grade_specular_fill.reverse}
+ addUserKnob {41 black_clamp_5 l "black clamp" T Grade_specular_fill.black_clamp}
+ addUserKnob {41 white_clamp_5 l "white clamp" T Grade_specular_fill.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_5 l "" -STARTLINE T Grade_specular_fill.maskChannelMask}
+ addUserKnob {41 maskChannelInput_5 l "" -STARTLINE T Grade_specular_fill.maskChannelInput}
+ addUserKnob {41 inject_5 l inject T Grade_specular_fill.inject}
+ addUserKnob {41 invert_mask_5 l invert T Grade_specular_fill.invert_mask}
+ addUserKnob {41 fringe_5 l fringe T Grade_specular_fill.fringe}
+ addUserKnob {41 unpremult_5 l "(un)premult by" T Grade_specular_fill.unpremult}
+ addUserKnob {41 invert_unpremult_5 l invert T Grade_specular_fill.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_5 l "" -STARTLINE T Grade_specular_fill.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_5 l "" -STARTLINE T Grade_specular_fill.mix_luminance}
+ addUserKnob {41 mix_5 l mix T Grade_specular_fill.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_5 l Colorcorrect}
+ addUserKnob {41 channels_12 l channels T ColorCorrect_specular_fill.channels}
+ addUserKnob {20 master_5 l "@b;master" n 1}
+ addUserKnob {41 saturation_5 l saturation T ColorCorrect_specular_fill.saturation}
+ addUserKnob {41 saturation_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.saturation_panelDropped}
+ addUserKnob {41 contrast_5 l contrast T ColorCorrect_specular_fill.contrast}
+ addUserKnob {41 contrast_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.contrast_panelDropped}
+ addUserKnob {41 gamma_11 l gamma T ColorCorrect_specular_fill.gamma}
+ addUserKnob {41 gamma_panelDropped_11 l "panel dropped state" T ColorCorrect_specular_fill.gamma_panelDropped}
+ addUserKnob {41 gain_5 l gain T ColorCorrect_specular_fill.gain}
+ addUserKnob {41 gain_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.gain_panelDropped}
+ addUserKnob {41 offset_5 l offset T ColorCorrect_specular_fill.offset}
+ addUserKnob {41 offset_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_5 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_5 l saturation T ColorCorrect_specular_fill.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_5 l contrast T ColorCorrect_specular_fill.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_5 l gamma T ColorCorrect_specular_fill.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_5 l gain T ColorCorrect_specular_fill.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_5 l offset T ColorCorrect_specular_fill.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_5 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_5 l saturation T ColorCorrect_specular_fill.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_5 l contrast T ColorCorrect_specular_fill.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_5 l gamma T ColorCorrect_specular_fill.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_5 l gain T ColorCorrect_specular_fill.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_5 l offset T ColorCorrect_specular_fill.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_5 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_5 l saturation T ColorCorrect_specular_fill.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_5 l contrast T ColorCorrect_specular_fill.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_5 l gamma T ColorCorrect_specular_fill.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_5 l gain T ColorCorrect_specular_fill.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_5 l offset T ColorCorrect_specular_fill.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_5 l "panel dropped state" T ColorCorrect_specular_fill.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 rim_spec}
+ addUserKnob {41 channels_13 l channels T Grade_specular_rim.channels}
+ addUserKnob {41 blackpoint_6 l blackpoint T Grade_specular_rim.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_6 l "panel dropped state" T Grade_specular_rim.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_6 l whitepoint T Grade_specular_rim.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_6 l "panel dropped state" T Grade_specular_rim.whitepoint_panelDropped}
+ addUserKnob {41 black_6 l lift T Grade_specular_rim.black}
+ addUserKnob {41 black_panelDropped_6 l "panel dropped state" T Grade_specular_rim.black_panelDropped}
+ addUserKnob {41 white_6 l gain T Grade_specular_rim.white}
+ addUserKnob {41 white_panelDropped_6 l "panel dropped state" T Grade_specular_rim.white_panelDropped}
+ addUserKnob {41 multiply_6 l multiply T Grade_specular_rim.multiply}
+ addUserKnob {41 multiply_panelDropped_6 l "panel dropped state" T Grade_specular_rim.multiply_panelDropped}
+ addUserKnob {41 add_6 l offset T Grade_specular_rim.add}
+ addUserKnob {41 add_panelDropped_6 l "panel dropped state" T Grade_specular_rim.add_panelDropped}
+ addUserKnob {41 gamma_12 l gamma T Grade_specular_rim.gamma}
+ addUserKnob {41 gamma_panelDropped_12 l "panel dropped state" T Grade_specular_rim.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_6 l reverse T Grade_specular_rim.reverse}
+ addUserKnob {41 black_clamp_6 l "black clamp" T Grade_specular_rim.black_clamp}
+ addUserKnob {41 white_clamp_6 l "white clamp" T Grade_specular_rim.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_6 l "" -STARTLINE T Grade_specular_rim.maskChannelMask}
+ addUserKnob {41 maskChannelInput_6 l "" -STARTLINE T Grade_specular_rim.maskChannelInput}
+ addUserKnob {41 inject_6 l inject T Grade_specular_rim.inject}
+ addUserKnob {41 invert_mask_6 l invert T Grade_specular_rim.invert_mask}
+ addUserKnob {41 fringe_6 l fringe T Grade_specular_rim.fringe}
+ addUserKnob {41 unpremult_6 l "(un)premult by" T Grade_specular_rim.unpremult}
+ addUserKnob {41 invert_unpremult_6 l invert T Grade_specular_rim.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_6 l "" -STARTLINE T Grade_specular_rim.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_6 l "" -STARTLINE T Grade_specular_rim.mix_luminance}
+ addUserKnob {41 mix_6 l mix T Grade_specular_rim.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_6 l Colorcorrect}
+ addUserKnob {41 channels_14 l channels T ColorCorrect_specular_rim.channels}
+ addUserKnob {20 master_6 l "@b;master" n 1}
+ addUserKnob {41 saturation_6 l saturation T ColorCorrect_specular_rim.saturation}
+ addUserKnob {41 saturation_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.saturation_panelDropped}
+ addUserKnob {41 contrast_6 l contrast T ColorCorrect_specular_rim.contrast}
+ addUserKnob {41 contrast_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.contrast_panelDropped}
+ addUserKnob {41 gamma_13 l gamma T ColorCorrect_specular_rim.gamma}
+ addUserKnob {41 gamma_panelDropped_13 l "panel dropped state" T ColorCorrect_specular_rim.gamma_panelDropped}
+ addUserKnob {41 gain_6 l gain T ColorCorrect_specular_rim.gain}
+ addUserKnob {41 gain_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.gain_panelDropped}
+ addUserKnob {41 offset_6 l offset T ColorCorrect_specular_rim.offset}
+ addUserKnob {41 offset_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_6 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_6 l saturation T ColorCorrect_specular_rim.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_6 l contrast T ColorCorrect_specular_rim.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_6 l gamma T ColorCorrect_specular_rim.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_6 l gain T ColorCorrect_specular_rim.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_6 l offset T ColorCorrect_specular_rim.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_6 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_6 l saturation T ColorCorrect_specular_rim.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_6 l contrast T ColorCorrect_specular_rim.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_6 l gamma T ColorCorrect_specular_rim.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_6 l gain T ColorCorrect_specular_rim.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_6 l offset T ColorCorrect_specular_rim.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_6 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_6 l saturation T ColorCorrect_specular_rim.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_6 l contrast T ColorCorrect_specular_rim.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_6 l gamma T ColorCorrect_specular_rim.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_6 l gain T ColorCorrect_specular_rim.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_6 l offset T ColorCorrect_specular_rim.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_6 l "panel dropped state" T ColorCorrect_specular_rim.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 emission}
+ addUserKnob {41 channels_17 l channels T Grade_emission.channels}
+ addUserKnob {41 blackpoint_8 l blackpoint T Grade_emission.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_8 l "panel dropped state" T Grade_emission.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_8 l whitepoint T Grade_emission.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_8 l "panel dropped state" T Grade_emission.whitepoint_panelDropped}
+ addUserKnob {41 black_8 l lift T Grade_emission.black}
+ addUserKnob {41 black_panelDropped_8 l "panel dropped state" T Grade_emission.black_panelDropped}
+ addUserKnob {41 white_8 l gain T Grade_emission.white}
+ addUserKnob {41 white_panelDropped_8 l "panel dropped state" T Grade_emission.white_panelDropped}
+ addUserKnob {41 multiply_8 l multiply T Grade_emission.multiply}
+ addUserKnob {41 multiply_panelDropped_8 l "panel dropped state" T Grade_emission.multiply_panelDropped}
+ addUserKnob {41 add_8 l offset T Grade_emission.add}
+ addUserKnob {41 add_panelDropped_8 l "panel dropped state" T Grade_emission.add_panelDropped}
+ addUserKnob {41 gamma_16 l gamma T Grade_emission.gamma}
+ addUserKnob {41 gamma_panelDropped_16 l "panel dropped state" T Grade_emission.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_8 l reverse T Grade_emission.reverse}
+ addUserKnob {41 black_clamp_8 l "black clamp" T Grade_emission.black_clamp}
+ addUserKnob {41 white_clamp_8 l "white clamp" T Grade_emission.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_8 l "" -STARTLINE T Grade_emission.maskChannelMask}
+ addUserKnob {41 maskChannelInput_8 l "" -STARTLINE T Grade_emission.maskChannelInput}
+ addUserKnob {41 inject_8 l inject T Grade_transmission.inject}
+ addUserKnob {41 invert_mask_8 l invert T Grade_emission.invert_mask}
+ addUserKnob {41 fringe_8 l fringe T Grade_emission.fringe}
+ addUserKnob {41 unpremult_8 l "(un)premult by" T Grade_emission.unpremult}
+ addUserKnob {41 invert_unpremult_8 l invert T Grade_emission.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_8 l "" -STARTLINE T Grade_emission.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_8 l "" -STARTLINE T Grade_emission.mix_luminance}
+ addUserKnob {41 mix_8 l mix T Grade_emission.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_8 l Colorcorrect}
+ addUserKnob {41 channels_18 l channels T ColorCorrect_emission.channels}
+ addUserKnob {20 master_8 l "@b;master" n 1}
+ addUserKnob {41 saturation_8 l saturation T ColorCorrect_emission.saturation}
+ addUserKnob {41 saturation_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.saturation_panelDropped}
+ addUserKnob {41 contrast_8 l contrast T ColorCorrect_emission.contrast}
+ addUserKnob {41 contrast_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.contrast_panelDropped}
+ addUserKnob {41 gamma_17 l gamma T ColorCorrect_emission.gamma}
+ addUserKnob {41 gamma_panelDropped_17 l "panel dropped state" T ColorCorrect_emission.gamma_panelDropped}
+ addUserKnob {41 gain_8 l gain T ColorCorrect_emission.gain}
+ addUserKnob {41 gain_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.gain_panelDropped}
+ addUserKnob {41 offset_8 l offset T ColorCorrect_emission.offset}
+ addUserKnob {41 offset_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_8 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_8 l saturation T ColorCorrect_emission.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_8 l contrast T ColorCorrect_emission.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_8 l gamma T ColorCorrect_emission.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_8 l gain T ColorCorrect_emission.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_8 l offset T ColorCorrect_emission.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_8 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_8 l saturation T ColorCorrect_emission.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_8 l contrast T ColorCorrect_emission.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_8 l gamma T ColorCorrect_emission.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_8 l gain T ColorCorrect_emission.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_8 l offset T ColorCorrect_emission.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_8 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_8 l saturation T ColorCorrect_emission.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_8 l contrast T ColorCorrect_emission.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_8 l gamma T ColorCorrect_emission.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_8 l gain T ColorCorrect_emission.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_8 l offset T ColorCorrect_emission.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_8 l "panel dropped state" T ColorCorrect_emission.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 sss}
+ addUserKnob {41 channels_19 l channels T Grade_sss.channels}
+ addUserKnob {41 blackpoint_9 l blackpoint T Grade_sss.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_9 l "panel dropped state" T Grade_sss.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_9 l whitepoint T Grade_sss.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_9 l "panel dropped state" T Grade_sss.whitepoint_panelDropped}
+ addUserKnob {41 black_9 l lift T Grade_sss.black}
+ addUserKnob {41 black_panelDropped_9 l "panel dropped state" T Grade_sss.black_panelDropped}
+ addUserKnob {41 white_9 l gain T Grade_sss.white}
+ addUserKnob {41 white_panelDropped_9 l "panel dropped state" T Grade_sss.white_panelDropped}
+ addUserKnob {41 multiply_9 l multiply T Grade_sss.multiply}
+ addUserKnob {41 multiply_panelDropped_9 l "panel dropped state" T Grade_sss.multiply_panelDropped}
+ addUserKnob {41 add_9 l offset T Grade_sss.add}
+ addUserKnob {41 add_panelDropped_9 l "panel dropped state" T Grade_sss.add_panelDropped}
+ addUserKnob {41 gamma_18 l gamma T Grade_sss.gamma}
+ addUserKnob {41 gamma_panelDropped_18 l "panel dropped state" T Grade_sss.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_9 l reverse T Grade_sss.reverse}
+ addUserKnob {41 black_clamp_9 l "black clamp" T Grade_sss.black_clamp}
+ addUserKnob {41 white_clamp_9 l "white clamp" T Grade_sss.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_9 l "" -STARTLINE T Grade_sss.maskChannelMask}
+ addUserKnob {41 maskChannelInput_9 l "" -STARTLINE T Grade_sss.maskChannelInput}
+ addUserKnob {41 inject_9 l inject T Grade_sss.inject}
+ addUserKnob {41 invert_mask_9 l invert T Grade_sss.invert_mask}
+ addUserKnob {41 fringe_9 l fringe T Grade_sss.fringe}
+ addUserKnob {41 unpremult_9 l "(un)premult by" T Grade_sss.unpremult}
+ addUserKnob {41 invert_unpremult_9 l invert T Grade_sss.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_9 l "" -STARTLINE T Grade_sss.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_9 l "" -STARTLINE T Grade_sss.mix_luminance}
+ addUserKnob {41 mix_9 l mix T Grade_sss.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_9 l Colorcorrect}
+ addUserKnob {41 channels_20 l channels T ColorCorrect_sss.channels}
+ addUserKnob {20 master_9 l "@b;master" n 1}
+ addUserKnob {41 saturation_9 l saturation T ColorCorrect_sss.saturation}
+ addUserKnob {41 saturation_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.saturation_panelDropped}
+ addUserKnob {41 contrast_9 l contrast T ColorCorrect_sss.contrast}
+ addUserKnob {41 contrast_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.contrast_panelDropped}
+ addUserKnob {41 gamma_19 l gamma T ColorCorrect_sss.gamma}
+ addUserKnob {41 gamma_panelDropped_19 l "panel dropped state" T ColorCorrect_sss.gamma_panelDropped}
+ addUserKnob {41 gain_9 l gain T ColorCorrect_sss.gain}
+ addUserKnob {41 gain_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.gain_panelDropped}
+ addUserKnob {41 offset_9 l offset T ColorCorrect_sss.offset}
+ addUserKnob {41 offset_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_9 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_9 l saturation T ColorCorrect_sss.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_9 l contrast T ColorCorrect_sss.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_9 l gamma T ColorCorrect_sss.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_9 l gain T ColorCorrect_sss.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_9 l offset T ColorCorrect_sss.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_9 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_9 l saturation T ColorCorrect_sss.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_9 l contrast T ColorCorrect_sss.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_9 l gamma T ColorCorrect_sss.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_9 l gain T ColorCorrect_sss.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_9 l offset T ColorCorrect_sss.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_9 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_9 l saturation T ColorCorrect_sss.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_9 l contrast T ColorCorrect_sss.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_9 l gamma T ColorCorrect_sss.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_9 l gain T ColorCorrect_sss.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_9 l offset T ColorCorrect_sss.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_9 l "panel dropped state" T ColorCorrect_sss.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 transmission}
+ addUserKnob {41 channels_21 l channels T Grade_transmission.channels}
+ addUserKnob {41 blackpoint_10 l blackpoint T Grade_transmission.blackpoint}
+ addUserKnob {41 blackpoint_panelDropped_10 l "panel dropped state" T Grade_transmission.blackpoint_panelDropped}
+ addUserKnob {41 whitepoint_10 l whitepoint T Grade_transmission.whitepoint}
+ addUserKnob {41 whitepoint_panelDropped_10 l "panel dropped state" T Grade_transmission.whitepoint_panelDropped}
+ addUserKnob {41 black_10 l lift T Grade_transmission.black}
+ addUserKnob {41 black_panelDropped_10 l "panel dropped state" T Grade_transmission.black_panelDropped}
+ addUserKnob {41 white_10 l gain T Grade_transmission.white}
+ addUserKnob {41 white_panelDropped_10 l "panel dropped state" T Grade_transmission.white_panelDropped}
+ addUserKnob {41 multiply_10 l multiply T Grade_transmission.multiply}
+ addUserKnob {41 multiply_panelDropped_10 l "panel dropped state" T Grade_transmission.multiply_panelDropped}
+ addUserKnob {41 add_10 l offset T Grade_transmission.add}
+ addUserKnob {41 add_panelDropped_10 l "panel dropped state" T Grade_transmission.add_panelDropped}
+ addUserKnob {41 gamma_20 l gamma T Grade_transmission.gamma}
+ addUserKnob {41 gamma_panelDropped_20 l "panel dropped state" T Grade_transmission.gamma_panelDropped}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {41 reverse_10 l reverse T Grade_transmission.reverse}
+ addUserKnob {41 black_clamp_10 l "black clamp" T Grade_transmission.black_clamp}
+ addUserKnob {41 white_clamp_10 l "white clamp" T Grade_transmission.white_clamp}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_10 l "" -STARTLINE T Grade_transmission.maskChannelMask}
+ addUserKnob {41 maskChannelInput_10 l "" -STARTLINE T Grade_transmission.maskChannelInput}
+ addUserKnob {41 inject_10 l inject T Grade_transmission.inject}
+ addUserKnob {41 invert_mask_10 l invert T Grade_transmission.invert_mask}
+ addUserKnob {41 fringe_10 l fringe T Grade_transmission.fringe}
+ addUserKnob {41 unpremult_10 l "(un)premult by" T Grade_transmission.unpremult}
+ addUserKnob {41 invert_unpremult_10 l invert T Grade_transmission.invert_unpremult}
+ addUserKnob {26 "" l "mix luminance"}
+ addUserKnob {41 enable_mix_luminance_10 l "" -STARTLINE T Grade_transmission.enable_mix_luminance}
+ addUserKnob {41 mix_luminance_10 l "" -STARTLINE T Grade_transmission.mix_luminance}
+ addUserKnob {41 mix_10 l mix T Grade_transmission.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 Colorcorrect_10 l Colorcorrect}
+ addUserKnob {41 channels_22 l channels T ColorCorrect_transmission.channels}
+ addUserKnob {20 master_10 l "@b;master" n 1}
+ addUserKnob {41 saturation_10 l saturation T ColorCorrect_transmission.saturation}
+ addUserKnob {41 saturation_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.saturation_panelDropped}
+ addUserKnob {41 contrast_10 l contrast T ColorCorrect_transmission.contrast}
+ addUserKnob {41 contrast_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.contrast_panelDropped}
+ addUserKnob {41 gamma_21 l gamma T ColorCorrect_transmission.gamma}
+ addUserKnob {41 gamma_panelDropped_21 l "panel dropped state" T ColorCorrect_transmission.gamma_panelDropped}
+ addUserKnob {41 gain_10 l gain T ColorCorrect_transmission.gain}
+ addUserKnob {41 gain_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.gain_panelDropped}
+ addUserKnob {41 offset_10 l offset T ColorCorrect_transmission.offset}
+ addUserKnob {41 offset_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_10 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_10 l saturation T ColorCorrect_transmission.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_10 l contrast T ColorCorrect_transmission.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_10 l gamma T ColorCorrect_transmission.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_10 l gain T ColorCorrect_transmission.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_10 l offset T ColorCorrect_transmission.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_10 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_10 l saturation T ColorCorrect_transmission.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_10 l contrast T ColorCorrect_transmission.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_10 l gamma T ColorCorrect_transmission.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_10 l gain T ColorCorrect_transmission.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_10 l offset T ColorCorrect_transmission.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_10 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_10 l saturation T ColorCorrect_transmission.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_10 l contrast T ColorCorrect_transmission.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_10 l gamma T ColorCorrect_transmission.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_10 l gain T ColorCorrect_transmission.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_10 l offset T ColorCorrect_transmission.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_10 l "panel dropped state" T ColorCorrect_transmission.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 motion_blur}
+ addUserKnob {22 disabletheVectorblur T "import nuke\npack=nuke.thisNode()\nmv = nuke.allNodes(\"VectorBlur2\")[0]\nmv\[\"disable\"].setValue(1)\npack\[\"enabletheVectorblur\"].setEnabled(True)\npack\[\"disabletheVectorblur\"].setEnabled(False)\n" +STARTLINE}
+ addUserKnob {22 enabletheVectorblur +DISABLED T "import nuke\npack=nuke.thisNode()\nmv = nuke.allNodes(\"VectorBlur2\")[0]\nmv\[\"disable\"].setValue(0)\npack\[\"enabletheVectorblur\"].setEnabled(False)\npack\[\"disabletheVectorblur\"].setEnabled(True)\n" +STARTLINE}
+ addUserKnob {41 channels_23 l channels T VectorBlur.channels}
+ addUserKnob {26 "" l "Local GPU:"}
+ addUserKnob {26 gpuName l "" +STARTLINE}
+ addUserKnob {26 "" l " "}
+ addUserKnob {41 useGPUIfAvailable l "Use GPU if available" T VectorBlur.useGPUIfAvailable}
+ addUserKnob {26 ""}
+ addUserKnob {41 uv l "uv channels" T VectorBlur.uv}
+ addUserKnob {41 mv_presets l "mv presets" T VectorBlur.mv_presets}
+ addUserKnob {26 "" l "vector preprocessing"}
+ addUserKnob {41 output T VectorBlur.output}
+ addUserKnob {41 blur_uv l "blur uv" T VectorBlur.blur_uv}
+ addUserKnob {41 invert_uv l "invert uv" T VectorBlur.invert_uv}
+ addUserKnob {26 "" l " "}
+ addUserKnob {41 uv_offset l "uv offset" T VectorBlur.uv_offset}
+ addUserKnob {41 alpha_1 l "uv alpha" T VectorBlur.alpha}
+ addUserKnob {26 "" l "motion blur"}
+ addUserKnob {41 blur_type l "blur type" T VectorBlur.blur_type}
+ addUserKnob {41 scale l "motion amount" T VectorBlur.scale}
+ addUserKnob {41 motion_falloff l "motion falloff" T VectorBlur.motion_falloff}
+ addUserKnob {41 offset_11 l "shutter offset" T VectorBlur.offset}
+ addUserKnob {41 grow_bbox l "expand blur bbox" T VectorBlur.grow_bbox}
+ addUserKnob {26 "" l " "}
+ addUserKnob {41 soft_lines l "soft lines" T VectorBlur.soft_lines}
+ addUserKnob {41 blur_inside l "blur inside" T VectorBlur.blur_inside}
+ addUserKnob {41 normalize T VectorBlur.normalize}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_11 l "" -STARTLINE T VectorBlur.maskChannelMask}
+ addUserKnob {41 maskChannelInput_11 l "" -STARTLINE T VectorBlur.maskChannelInput}
+ addUserKnob {41 inject_11 l inject T VectorBlur.inject}
+ addUserKnob {41 invert_mask_11 l invert T VectorBlur.invert_mask}
+ addUserKnob {41 fringe_11 l fringe T VectorBlur.fringe}
+ addUserKnob {41 mix_11 l mix T VectorBlur.mix}
+ addUserKnob {20 last}
+ addUserKnob {41 channels_24 l channels T ColorCorrect_last.channels}
+ addUserKnob {20 master_11 l "@b;master" n 1}
+ addUserKnob {41 saturation_11 l saturation T ColorCorrect_last.saturation}
+ addUserKnob {41 saturation_panelDropped_11 l "panel dropped state" T ColorCorrect_last.saturation_panelDropped}
+ addUserKnob {41 contrast_11 l contrast T ColorCorrect_last.contrast}
+ addUserKnob {41 contrast_panelDropped_11 l "panel dropped state" T ColorCorrect_last.contrast_panelDropped}
+ addUserKnob {41 gamma_22 l gamma T ColorCorrect_last.gamma}
+ addUserKnob {41 gamma_panelDropped_22 l "panel dropped state" T ColorCorrect_last.gamma_panelDropped}
+ addUserKnob {41 gain_11 l gain T ColorCorrect_last.gain}
+ addUserKnob {41 gain_panelDropped_11 l "panel dropped state" T ColorCorrect_last.gain_panelDropped}
+ addUserKnob {41 offset_12 l offset T ColorCorrect_last.offset}
+ addUserKnob {41 offset_panelDropped_11 l "panel dropped state" T ColorCorrect_last.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 shadows_11 l "@b;shadows" n 1}
+ addUserKnob {41 shadows.saturation_11 l saturation T ColorCorrect_last.shadows.saturation}
+ addUserKnob {41 shadows.saturation_panelDropped_11 l "panel dropped state" T ColorCorrect_last.shadows.saturation_panelDropped}
+ addUserKnob {41 shadows.contrast_11 l contrast T ColorCorrect_last.shadows.contrast}
+ addUserKnob {41 shadows.contrast_panelDropped_11 l "panel dropped state" T ColorCorrect_last.shadows.contrast_panelDropped}
+ addUserKnob {41 shadows.gamma_11 l gamma T ColorCorrect_last.shadows.gamma}
+ addUserKnob {41 shadows.gamma_panelDropped_11 l "panel dropped state" T ColorCorrect_last.shadows.gamma_panelDropped}
+ addUserKnob {41 shadows.gain_11 l gain T ColorCorrect_last.shadows.gain}
+ addUserKnob {41 shadows.gain_panelDropped_11 l "panel dropped state" T ColorCorrect_last.shadows.gain_panelDropped}
+ addUserKnob {41 shadows.offset_11 l offset T ColorCorrect_last.shadows.offset}
+ addUserKnob {41 shadows.offset_panelDropped_11 l "panel dropped state" T ColorCorrect_last.shadows.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 midtones_11 l "@b;midtones" n 1}
+ addUserKnob {41 midtones.saturation_11 l saturation T ColorCorrect_last.midtones.saturation}
+ addUserKnob {41 midtones.saturation_panelDropped_11 l "panel dropped state" T ColorCorrect_last.midtones.saturation_panelDropped}
+ addUserKnob {41 midtones.contrast_11 l contrast T ColorCorrect_last.midtones.contrast}
+ addUserKnob {41 midtones.contrast_panelDropped_11 l "panel dropped state" T ColorCorrect_last.midtones.contrast_panelDropped}
+ addUserKnob {41 midtones.gamma_11 l gamma T ColorCorrect_last.midtones.gamma}
+ addUserKnob {41 midtones.gamma_panelDropped_11 l "panel dropped state" T ColorCorrect_last.midtones.gamma_panelDropped}
+ addUserKnob {41 midtones.gain_11 l gain T ColorCorrect_last.midtones.gain}
+ addUserKnob {41 midtones.gain_panelDropped_11 l "panel dropped state" T ColorCorrect_last.midtones.gain_panelDropped}
+ addUserKnob {41 midtones.offset_11 l offset T ColorCorrect_last.midtones.offset}
+ addUserKnob {41 midtones.offset_panelDropped_11 l "panel dropped state" T ColorCorrect_last.midtones.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 highlights_11 l "@b;highlights" n 1}
+ addUserKnob {41 highlights.saturation_11 l saturation T ColorCorrect_last.highlights.saturation}
+ addUserKnob {41 highlights.saturation_panelDropped_11 l "panel dropped state" T ColorCorrect_last.highlights.saturation_panelDropped}
+ addUserKnob {41 highlights.contrast_11 l contrast T ColorCorrect_last.highlights.contrast}
+ addUserKnob {41 highlights.contrast_panelDropped_11 l "panel dropped state" T ColorCorrect_last.highlights.contrast_panelDropped}
+ addUserKnob {41 highlights.gamma_11 l gamma T ColorCorrect_last.highlights.gamma}
+ addUserKnob {41 highlights.gamma_panelDropped_11 l "panel dropped state" T ColorCorrect_last.highlights.gamma_panelDropped}
+ addUserKnob {41 highlights.gain_11 l gain T ColorCorrect_last.highlights.gain}
+ addUserKnob {41 highlights.gain_panelDropped_11 l "panel dropped state" T ColorCorrect_last.highlights.gain_panelDropped}
+ addUserKnob {41 highlights.offset_11 l offset T ColorCorrect_last.highlights.offset}
+ addUserKnob {41 highlights.offset_panelDropped_11 l "panel dropped state" T ColorCorrect_last.highlights.offset_panelDropped}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 soften}
+ addUserKnob {41 channels_25 l channels T Soften.channels}
+ addUserKnob {41 minimum T Soften.minimum}
+ addUserKnob {41 maximum T Soften.maximum}
+ addUserKnob {41 amount T Soften.amount}
+ addUserKnob {41 size T Soften.size}
+ addUserKnob {41 filter T Soften.filter}
+ addUserKnob {41 quality l "" -STARTLINE T Soften.quality}
+ addUserKnob {41 crop l "crop to format" T Soften.crop}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask_12 l "" -STARTLINE T Soften.maskChannelMask}
+ addUserKnob {41 maskChannelInput_12 l "" -STARTLINE T Soften.maskChannelInput}
+ addUserKnob {41 inject_12 l inject T Soften.inject}
+ addUserKnob {41 invert_mask_12 l invert T Soften.invert_mask}
+ addUserKnob {41 fringe_12 l fringe T Soften.fringe}
+ addUserKnob {41 mix_12 l mix T Soften.mix}
+ addUserKnob {20 premult}
+ addUserKnob {41 channels_26 l multiply T Premult1.channels}
+ addUserKnob {41 alpha_2 l by T Premult1.alpha}
+ addUserKnob {41 invert_1 l invert T Premult1.invert}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x4355b5ff
+  label amb_dif
+  note_font_size 20
+  xpos -589
+  ypos -447
+  bdwidth 317
+  bdheight 240
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode10
+  tile_color 0xbbe27c
+  label sss
+  note_font_size 20
+  xpos 27
+  ypos 748
+  bdwidth 188
+  bdheight 118
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  tile_color 0x153158e
+  label transmission
+  note_font_size 20
+  xpos 27
+  ypos 895
+  bdwidth 196
+  bdheight 127
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode12
+  tile_color 0xdebd01c7
+  label motion_blur
+  note_font_size 20
+  xpos -195
+  ypos 1118
+  bdwidth 500
+  bdheight 200
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0x622e902f
+  label fill_dif
+  note_font_size 20
+  xpos -210
+  ypos -466
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x56850eaf
+  label key_dif
+  note_font_size 20
+  xpos 93
+  ypos -477
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  tile_color 0x9ea530af
+  label rim_dif
+  note_font_size 20
+  xpos 363
+  ypos -477
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  tile_color 0x4314673f
+  label amb_spc
+  note_font_size 20
+  xpos 189
+  ypos 314
+  bdwidth 387
+  bdheight 198
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  tile_color 0x96592aaf
+  label key_spc
+  note_font_size 20
+  xpos -37
+  ypos -51
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode7
+  tile_color 0xa992fb
+  label fill_spc
+  note_font_size 20
+  xpos 213
+  ypos -51
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode8
+  tile_color 0x16900fd
+  label rim_spc
+  note_font_size 20
+  xpos 433
+  ypos -51
+  bdwidth 166
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode9
+  tile_color 0x89e138dd
+  label emission
+  note_font_size 20
+  xpos 32
+  ypos 566
+  bdwidth 193
+  bdheight 144
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -158
+  ypos -702
+ }
+ Unpremult {
+  channels all
+  name Unpremult1
+  xpos -158
+  ypos -614
+ }
+ Dot {
+  name Dot1
+  xpos -124
+  ypos -538
+ }
+set N7f0a3800 [stack 0]
+ Dot {
+  name Dot15
+  xpos 238
+  ypos -538
+ }
+push $N7f0a3800
+ Dot {
+  name Dot16
+  xpos 417
+  ypos -538
+ }
+push $N7f0a3800
+ Dot {
+  name Dot21
+  xpos 636
+  ypos -538
+ }
+set N7f0a2c00 [stack 0]
+ Dot {
+  name Dot24
+  xpos 636
+  ypos 1200
+ }
+add_layer {motionvector motionvector.red motionvector.green motionvector.blue}
+ Shuffle {
+  in motionvector
+  name motionvector
+  xpos 98
+  ypos 1196
+ }
+push $N7f0a3800
+ Dot {
+  name Dot2
+  xpos -518
+  ypos -538
+ }
+set N7f0a2000 [stack 0]
+ Dot {
+  name Dot18
+  xpos -661
+  ypos -538
+ }
+ Dot {
+  name Dot17
+  xpos -661
+  ypos 1028
+ }
+push $N7f0a2c00
+ Dot {
+  name Dot23
+  xpos 636
+  ypos 934
+ }
+add_layer {transmission transmission.red transmission.green transmission.blue}
+ Shuffle {
+  in transmission
+  name transmission
+  xpos 118
+  ypos 930
+ }
+ Grade {
+  name Grade_transmission
+  xpos 118
+  ypos 956
+ }
+ ColorCorrect {
+  name ColorCorrect_transmission
+  selected true
+  xpos 118
+  ypos 982
+ }
+push $N7f0a2c00
+ Dot {
+  name Dot22
+  xpos 636
+  ypos 783
+ }
+add_layer {sss sss.red sss.green sss.blue}
+ Shuffle {
+  in sss
+  name sss
+  xpos 115
+  ypos 779
+ }
+ Grade {
+  name Grade_sss
+  xpos 115
+  ypos 805
+ }
+ ColorCorrect {
+  name ColorCorrect_sss
+  xpos 115
+  ypos 831
+ }
+push $N7f0a2c00
+ Dot {
+  name Dot20
+  xpos 636
+  ypos 624
+ }
+add_layer {emission emission.red emission.green emission.blue}
+ Shuffle {
+  in emission
+  name emission
+  xpos 97
+  ypos 620
+ }
+ Grade {
+  name Grade_emission
+  xpos 97
+  ypos 646
+ }
+ ColorCorrect {
+  name ColorCorrect_emission
+  xpos 97
+  ypos 672
+ }
+push $N7f0a3800
+ Dot {
+  name Dot4
+  xpos 297
+  ypos -538
+ }
+add_layer {specular_indirect_amb specular_indirect_amb.red specular_indirect_amb.green specular_indirect_amb.blue}
+ Shuffle {
+  in specular_indirect_amb
+  name specular_indirect_amb
+  xpos 263
+  ypos 355
+ }
+push $N7f0a3800
+ Dot {
+  name Dot9
+  xpos 475
+  ypos -538
+ }
+add_layer {specular_direct_amb specular_direct_amb.red specular_direct_amb.green specular_direct_amb.blue}
+ Shuffle {
+  in specular_direct_amb
+  name specular_direct_amb
+  xpos 441
+  ypos 357
+ }
+ Dot {
+  name Dot25
+  xpos 475
+  ypos 413
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge4
+  xpos 263
+  ypos 409
+ }
+ Grade {
+  name Grade_amb_spc
+  xpos 263
+  ypos 435
+ }
+ ColorCorrect {
+  name ColorCorrect_amb_spc
+  xpos 263
+  ypos 470
+ }
+push $N7f0a3800
+ Dot {
+  name Dot13
+  xpos 499
+  ypos -538
+ }
+add_layer {specular_rim specular_rim.red specular_rim.green specular_rim.blue}
+ Shuffle {
+  in specular_rim
+  name specular_rim
+  xpos 465
+  ypos 22
+ }
+ Grade {
+  name Grade_specular_rim
+  xpos 465
+  ypos 48
+ }
+ ColorCorrect {
+  name ColorCorrect_specular_rim
+  xpos 465
+  ypos 74
+ }
+ Dot {
+  name Dot14
+  xpos 499
+  ypos 246
+ }
+push 0
+push $N7f0a3800
+ Dot {
+  name Dot10
+  xpos 59
+  ypos -538
+ }
+add_layer {specular_key specular_key.red specular_key.green specular_key.blue}
+ Shuffle {
+  in specular_key
+  name specular_key
+  xpos 25
+  ypos 29
+ }
+ Grade {
+  name Grade_specular_key
+  xpos 25
+  ypos 55
+ }
+ ColorCorrect {
+  name ColorCorrect_specular_key
+  xpos 25
+  ypos 81
+ }
+push $N7f0a3800
+ Dot {
+  name Dot11
+  xpos 271
+  ypos -538
+ }
+add_layer {specular_fill specular_fill.red specular_fill.green specular_fill.blue}
+ Shuffle {
+  in specular_fill
+  name specular_fill
+  xpos 237
+  ypos 26
+ }
+ Grade {
+  name Grade_specular_fill
+  xpos 237
+  ypos 52
+ }
+ ColorCorrect {
+  name ColorCorrect_specular_fill
+  xpos 237
+  ypos 84
+ }
+ Dot {
+  name Dot12
+  xpos 271
+  ypos 246
+ }
+ Merge2 {
+  inputs 3+1
+  operation plus
+  name Merge5
+  xpos 25
+  ypos 242
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge6
+  xpos 25
+  ypos 470
+ }
+push $N7f0a3800
+ Dot {
+  name Dot7
+  xpos 403
+  ypos -538
+ }
+add_layer {diffuse_rim diffuse_rim.red diffuse_rim.green diffuse_rim.blue}
+ Shuffle {
+  in diffuse_rim
+  name diffuse_rim
+  xpos 369
+  ypos -405
+ }
+ Grade {
+  name Grade_diffuse_rim
+  xpos 369
+  ypos -379
+ }
+ ColorCorrect {
+  name ColorCorrect_diffuse_rim
+  xpos 369
+  ypos -353
+ }
+ Dot {
+  name Dot8
+  xpos 403
+  ypos -158
+ }
+push 0
+push $N7f0a3800
+ Dot {
+  name Dot5
+  xpos 160
+  ypos -538
+ }
+add_layer {diffuse_key diffuse_key.red diffuse_key.green diffuse_key.blue}
+ Shuffle {
+  in diffuse_key
+  name diffuse_key
+  xpos 126
+  ypos -401
+ }
+ Grade {
+  name Grade_diffuse_key
+  xpos 126
+  ypos -375
+ }
+ ColorCorrect {
+  name ColorCorrect_diffuse_key
+  xpos 126
+  ypos -349
+ }
+ Dot {
+  name Dot6
+  xpos 160
+  ypos -158
+ }
+push $N7f0a3800
+add_layer {diffuse_fill diffuse_fill.red diffuse_fill.green diffuse_fill.blue}
+ Shuffle {
+  in diffuse_fill
+  name diffuse_fill
+  xpos -158
+  ypos -387
+ }
+ Grade {
+  name Grade_diffuse_fill
+  xpos -158
+  ypos -322
+ }
+ ColorCorrect {
+  name ColorCorrect_diffuse_fill
+  xpos -158
+  ypos -284
+ }
+ Merge2 {
+  inputs 3+1
+  operation plus
+  name Merge2
+  xpos -158
+  ypos -162
+ }
+push $N7f0a3800
+ Dot {
+  name Dot3
+  xpos -348
+  ypos -538
+ }
+add_layer {diffuse_direct_amb diffuse_direct_amb.red diffuse_direct_amb.green diffuse_direct_amb.blue}
+ Shuffle {
+  in diffuse_direct_amb
+  name diffuse_direct_amb
+  xpos -382
+  ypos -348
+ }
+push $N7f0a2000
+add_layer {diffuse_indirect_amb diffuse_indirect_amb.red diffuse_indirect_amb.green diffuse_indirect_amb.blue}
+ Shuffle {
+  in diffuse_indirect_amb
+  name diffuse_indirect_amb
+  xpos -552
+  ypos -405
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -552
+  ypos -348
+ }
+ Grade {
+  name Grade_amb_fill
+  xpos -552
+  ypos -287
+ }
+ ColorCorrect {
+  name ColorCorrect_amb_fill
+  xpos -552
+  ypos -241
+ }
+ Dot {
+  name Dot19
+  xpos -518
+  ypos -81
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge3
+  xpos -158
+  ypos -85
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge7
+  xpos -158
+  ypos 470
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge8
+  xpos -158
+  ypos 672
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge9
+  xpos -158
+  ypos 831
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge10
+  xpos -158
+  ypos 982
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -158
+  ypos 1018
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 forward.u
+  from1 rgba.green
+  to1 forward.v
+  name Copy2
+  xpos -158
+  ypos 1183
+ }
+ VectorBlur2 {
+  name VectorBlur
+  xpos -158
+  ypos 1278
+ }
+ Premult {
+  name Premult1
+  xpos -158
+  ypos 1347
+ }
+ ColorCorrect {
+  name ColorCorrect_last
+  xpos -158
+  ypos 1385
+ }
+ Soften {
+  name Soften
+  xpos -158
+  ypos 1411
+ }
+ Output {
+  name Output1
+  xpos -158
+  ypos 1525
+ }
+end_group
