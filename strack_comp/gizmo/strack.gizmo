@@ -1,0 +1,50 @@
+#! C:/Program Files/Nuke11.0v1/nuke-11.0.1.dll -nx
+#write_info Strack file:"D:/render_test/test.jpg" format:"1920 1080 1" chans:":rgba.red:rgba.green:rgba.blue:" framerange:"1 166" fps:"25" colorspace:"default (sRGB)" datatype:"8 bit" transfer:"unknown" views:"main" timecode:"00:00:00:00" colorManagement:"Nuke"
+version 11.0 v1
+Gizmo {
+ addUserKnob {20 Strack_Write t Strack_Write}
+ addUserKnob {41 channels_1 l channels T Strack.channels}
+ addUserKnob {41 file T Strack.file}
+ addUserKnob {41 proxy T Strack.proxy}
+ addUserKnob {41 frame_mode l frame T Strack.frame_mode}
+ addUserKnob {41 frame l "" -STARTLINE T Strack.frame}
+ addUserKnob {41 colorspace T Strack.colorspace}
+ addUserKnob {41 premultiplied -STARTLINE T Strack.premultiplied}
+ addUserKnob {41 raw l "raw data" -STARTLINE T Strack.raw}
+ addUserKnob {41 views T Strack.views}
+ addUserKnob {41 file_type l "file type" T Strack.file_type}
+ addUserKnob {26 ""}
+ addUserKnob {41 create_directories l "create directories" T Strack.create_directories}
+ addUserKnob {41 render_order l "render order" T Strack.render_order}
+ addUserKnob {41 Render -STARTLINE T Strack.Render}
+ addUserKnob {41 first l "frame range" T Strack.first}
+ addUserKnob {41 last l "" -STARTLINE T Strack.last}
+ addUserKnob {41 use_limit l "limit to range" -STARTLINE T Strack.use_limit}
+ addUserKnob {26 "" l " "}
+ addUserKnob {41 reading l "read file" T Strack.reading}
+ addUserKnob {41 checkHashOnRead l "check file matches input" T Strack.checkHashOnRead}
+ addUserKnob {41 on_error l "missing frames" T Strack.on_error}
+ addUserKnob {41 reload l Reload -STARTLINE T Strack.reload}
+ addUserKnob {41 read_all_lines l "read all lines" -STARTLINE T Strack.read_all_lines}
+ addUserKnob {41 afterRender l "after render" T Strack.afterRender}
+}
+ Input {
+  inputs 0
+  name Input1
+  tile_color 0xff0010ff
+  xpos -118
+  ypos -55
+ }
+ Write {
+  afterRender "thisnode=nuke.thisNode()\nthisnode\['tile_color'].setValue(16711680L)"
+  name Strack
+  tile_color 0xffffffff
+  xpos -118
+  ypos 21
+ }
+ Output {
+  name Output1
+  xpos -118
+  ypos 102
+ }
+end_group

@@ -1,0 +1,166 @@
+
+Gizmo {
+ inputs 2
+ tile_color 0x5b7287ff
+ addUserKnob {20 User l MotionBlur}
+ addUserKnob {26 text l MotionBlur}
+ addUserKnob {41 blur_type l "blur type" T VectorBlur1.blur_type}
+ addUserKnob {41 scale l "motion amount" T VectorBlur1.scale}
+ addUserKnob {41 mix T VectorBlur1.mix}
+ addUserKnob {26 text_1 l Merge}
+ addUserKnob {41 erode l Erode T FilterErode1.size}
+ addUserKnob {41 blur l Blur T Blur1.size}
+ addUserKnob {26 ""}
+ addUserKnob {26 author l Author T "    H_EdgeVGMotionBlur v1 for NUKE\n    Copying by NUKE公社(霍晓东)\n    微信关注：NUKEgroup\n    NUKEgroup@163.com"}
+ addUserKnob {20 Grain}
+ addUserKnob {41 invert -STARTLINE T Keyer1.invert}
+ addUserKnob {41 range T Keyer1.range}
+ addUserKnob {41 seed T Grain2_1.seed}
+ addUserKnob {41 presets l "" -STARTLINE T Grain2_1.presets}
+ addUserKnob {26 "" l "@b;Size"}
+ addUserKnob {41 red_size l red T Grain2_1.red_size}
+ addUserKnob {41 green_size l green T Grain2_1.green_size}
+ addUserKnob {41 blue_size l blue T Grain2_1.blue_size}
+ addUserKnob {26 "" l "@b;Intensity"}
+ addUserKnob {41 red_m l red T Grain2_1.red_m}
+ addUserKnob {41 green_m l green T Grain2_1.green_m}
+ addUserKnob {41 blue_m l blue T Grain2_1.blue_m}
+}
+ Input {
+  inputs 0
+  name AltTrackSrc
+  xpos 267
+  ypos 87
+  number 1
+ }
+set N8870ce00 [stack 0]
+ Input {
+  inputs 0
+  name Input1
+  xpos 266
+  ypos 86
+ }
+set N8870ca80 [stack 0]
+ FilterErode {
+  size 5.5
+  name FilterErode1
+  xpos 266
+  ypos 82
+ }
+ Blur {
+  channels alpha
+  size 7
+  name Blur1
+  xpos 266
+  ypos 82
+ }
+set N8874c380 [stack 0]
+push $N8870ce00
+push $N8870ca80
+ Switch {
+  inputs 2
+  which {{"\[exists parent.input1.disable]"}}
+  name Switch1
+  xpos 267
+  ypos 87
+ }
+ VectorGenerator {
+  motionEstimation Regularized
+  Advanced 1
+  Tolerances 1
+  name VectorGenerator1
+  xpos 267
+  ypos 81
+ }
+push $N8870ca80
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels motion
+  name Copy2
+  xpos 266
+  ypos 74
+ }
+ VectorBlur2 {
+  uv motion
+  scale 1.7
+  name VectorBlur1
+  xpos 266
+  ypos 81
+ }
+set N887bdc00 [stack 0]
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge1
+  xpos 266
+  ypos 75
+ }
+push $N887bdc00
+ Keyer {
+  invert true
+  operation "luminance key"
+  range {0.06062978207 0.1556084443 1 1}
+  name Keyer1
+  xpos 266
+  ypos 81
+ }
+set N887bd180 [stack 0]
+push $N8874c380
+ Premult {
+  name Premult1
+  xpos 266
+  ypos 88
+ }
+push $N887bd180
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  xpos 266
+  ypos 81
+  red_size 2
+  green_size 2.3
+  blue_size 1.9
+  red_m 0.175
+  green_m 0.19
+  blue_m 0.24
+  black {0 0 0}
+  minimum {0 0 0}
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  label "\[value operation] :(\[value Achannels] , \[value Bchannels])"
+  xpos 266
+  ypos 81
+ }
+add_layer {Grain Grain.alpha}
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 Grain.alpha
+  name Copy1
+  xpos 266
+  ypos 81
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy3
+  xpos 266
+  ypos 81
+ }
+ Switch {
+  inputs 2
+  which {{parent.Kronos1.showVectors}}
+  name Switch2
+  xpos 266
+  ypos 87
+ }
+ Output {
+  name Output1
+  xpos 266
+  ypos 87
+ }
+end_group

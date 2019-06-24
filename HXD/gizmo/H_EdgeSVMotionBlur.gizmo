@@ -1,0 +1,364 @@
+
+Gizmo {
+ inputs 2
+ tile_color 0xff7200ff
+ addUserKnob {20 User l MotionBlur}
+ addUserKnob {41 origfirst l "frame range" T TimeClip1.origfirst}
+ addUserKnob {41 origlast l "" -STARTLINE T TimeClip1.origlast}
+ addUserKnob {26 text l MotionBlur}
+ addUserKnob {41 blur_type l "blur type" T VectorBlur1.blur_type}
+ addUserKnob {41 scale l "motion amount" T VectorBlur1.scale}
+ addUserKnob {41 vectorDetailReg l "Vector Detail" T SmartVector1.vectorDetailReg}
+ addUserKnob {41 strengthReg l Strength T SmartVector1.strengthReg}
+ addUserKnob {41 mix T VectorBlur1.mix}
+ addUserKnob {26 text_1 l Merge}
+ addUserKnob {41 erode l Erode T FilterErode1.size}
+ addUserKnob {41 blur l Blur T Blur1.size}
+ addUserKnob {26 ""}
+ addUserKnob {20 Tolerances n 1}
+ Tolerances 0
+ addUserKnob {41 flickerCompensation l "Flicker Compensation" T SmartVector1.flickerCompensation}
+ addUserKnob {41 weightRed l "Weight Red" T SmartVector1.weightRed}
+ addUserKnob {41 weightGreen l "Weight Green" T SmartVector1.weightGreen}
+ addUserKnob {41 weightBlue l "Weight Blue" T SmartVector1.weightBlue}
+ addUserKnob {41 vectorSpacing l "Vector Spacing" T Kronos1.vectorSpacing}
+ addUserKnob {41 showVectors l "Overlay Vectors" -STARTLINE T Kronos1.showVectors}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 author l Author T "    H_EdgeMotionBlur v2 for NukeX11.2\n    Copying by NUKE公社\n    微信关注：NUKEgroup\n    NUKEgroup@163.com"}
+ addUserKnob {20 Grain}
+ addUserKnob {41 invert -STARTLINE T Keyer1.invert}
+ addUserKnob {41 range T Keyer1.range}
+ addUserKnob {41 seed T Grain2_1.seed}
+ addUserKnob {41 presets l "" -STARTLINE T Grain2_1.presets}
+ addUserKnob {26 "" l "@b;Size"}
+ addUserKnob {41 red_size l red T Grain2_1.red_size}
+ addUserKnob {41 green_size l green T Grain2_1.green_size}
+ addUserKnob {41 blue_size l blue T Grain2_1.blue_size}
+ addUserKnob {26 "" l "@b;Intensity"}
+ addUserKnob {41 red_m l red T Grain2_1.red_m}
+ addUserKnob {41 green_m l green T Grain2_1.green_m}
+ addUserKnob {41 blue_m l blue T Grain2_1.blue_m}
+}
+ Input {
+  inputs 0
+  name AltTrackSrc
+  xpos 466
+  ypos 81
+  number 1
+ }
+set N28ad5180 [stack 0]
+ Input {
+  inputs 0
+  name Input1
+  xpos 249
+  ypos 85
+ }
+set N28ad4000 [stack 0]
+ Switch {
+  inputs 2
+  which {{"\[exists parent.input1.disable]"}}
+  name Switch1
+  xpos 466
+  ypos 171
+ }
+ TimeClip {
+  time ""
+  first {{origfirst-1}}
+  last {{origlast+1}}
+  origlast 129
+  origset true
+  mask_metadata true
+  name TimeClip1
+  xpos 466
+  ypos 235
+ }
+ SmartVector {
+  file.last_frame 130
+  Advanced 1
+  flickerCompensation true
+  Tolerances 1
+  name SmartVector1
+  xpos 466
+  ypos 324
+ }
+ Remove {
+  channels motion
+  name Remove3
+  xpos 466
+  ypos 411
+ }
+set N24e71180 [stack 0]
+ Dot {
+  name Dot5
+  xpos 635
+  ypos 422
+ }
+set N9fe64700 [stack 0]
+ TimeOffset {
+  time_offset 1
+  time ""
+  name TimeOffset6
+  xpos 584
+  ypos 473
+ }
+set Na1c31200 [stack 0]
+push $Na1c31200
+add_layer {smartvector_f01_v01 smartvector_f01_v01.n_u smartvector_f01_v01.n_v smartvector_f01_v01.p_u smartvector_f01_v01.p_v}
+ Copy {
+  inputs 2
+  from0 smartvector_f01_v01.p_u
+  to0 backward.u
+  from1 smartvector_f01_v01.p_v
+  to1 backward.v
+  name Copy11
+  xpos 584
+  ypos 524
+ }
+set N9fe64a80 [stack 0]
+ Dot {
+  name Dot6
+  xpos 635
+  ypos 590
+ }
+push $N28ad4000
+ Dot {
+  name Dot2
+  xpos 300
+  ypos 173
+ }
+set N2263f880 [stack 0]
+ Dot {
+  name Dot3
+  xpos 100
+  ypos 173
+ }
+ FilterErode {
+  size 5.5
+  name FilterErode1
+  xpos 32
+  ypos 1017
+ }
+ Blur {
+  channels alpha
+  size 7
+  name Blur1
+  xpos 32
+  ypos 1085
+ }
+set N27f20000 [stack 0]
+push $N24e71180
+ TimeOffset {
+  time_offset -1
+  time ""
+  name TimeOffset7
+  xpos 466
+  ypos 485
+ }
+set Na1c31b00 [stack 0]
+push $Na1c31b00
+ Copy {
+  inputs 2
+  from0 smartvector_f01_v01.n_u
+  to0 forward.u
+  from1 smartvector_f01_v01.n_v
+  to1 forward.v
+  name Copy12
+  xpos 474
+  ypos 524
+ }
+ Dot {
+  name Dot7
+  xpos 525
+  ypos 638
+ }
+push $N9fe64a80
+push $N9fe64700
+ Dot {
+  name Dot8
+  xpos 830
+  ypos 421
+ }
+ ShuffleCopy {
+  inputs 2
+  in backward
+  in2 forward
+  blue red
+  alpha green
+  out motion
+  name ShuffleCopy3
+  xpos 796
+  ypos 537
+ }
+ ShuffleCopy {
+  inputs 2
+  in forward
+  in2 backward
+  red red
+  green green
+  blue red2
+  alpha green2
+  out motion
+  name ShuffleCopy4
+  xpos 796
+  ypos 633
+ }
+ Multiply {
+  channels {forward.u -forward.v}
+  value {{parent.scale.0}}
+  name Multiply1
+  xpos 796
+  ypos 677
+ }
+ Multiply {
+  channels {-forward.u forward.v}
+  value {{parent.scale.1}}
+  name Multiply2
+  xpos 796
+  ypos 725
+ }
+ Multiply {
+  channels {backward.u -backward.v}
+  value {{parent.scale.0}}
+  name Multiply3
+  xpos 796
+  ypos 773
+ }
+ Multiply {
+  channels {-backward.u backward.v}
+  value {{parent.scale.1}}
+  name Multiply4
+  xpos 796
+  ypos 841
+ }
+push $N2263f880
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels motion
+  name Copy2
+  xpos 249
+  ypos 834
+ }
+ VectorBlur2 {
+  uv motion
+  scale 1.7
+  name VectorBlur1
+  xpos 249
+  ypos 900
+ }
+set N298a8000 [stack 0]
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge1
+  xpos 155
+  ypos 1310
+ }
+set N298a9500 [stack 0]
+push $N28ad5180
+ Kronos {
+  input.first -100
+  input.last 1000
+  retimedChannels all
+  timingOutputSpeed 1
+  showLegacyMode false
+  motionEstimation Regularized
+  vectorDetailReg {{parent.SmartVector1.vectorDetailReg}}
+  strengthReg {{parent.SmartVector1.strengthReg}}
+  Advanced 1
+  flickerCompensation {{parent.SmartVector1.flickerCompensation}}
+  legacyModeNuke9 false
+  Tolerances 1
+  weightRed {{parent.SmartVector1.weightRed}}
+  weightGreen {{parent.SmartVector1.weightGreen}}
+  weightBlue {{parent.SmartVector1.weightBlue}}
+  vectorSpacing 10
+  name Kronos1
+  selected true
+  xpos 466
+  ypos 696
+ }
+push $N298a9500
+push $N298a8000
+ Keyer {
+  invert true
+  operation "luminance key"
+  range {0.01773313805 0.2137319765 1 1}
+  name Keyer1
+  xpos 249
+  ypos 992
+ }
+set N29d9fc00 [stack 0]
+ Dot {
+  name Dot1
+  xpos 489
+  ypos 1003
+ }
+push $N27f20000
+ Premult {
+  name Premult1
+  xpos 32
+  ypos 1245
+ }
+push $N29d9fc00
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  xpos 249
+  ypos 1129
+  red_size 2
+  green_size 2.3
+  blue_size 1.9
+  red_m 0.175
+  green_m 0.19
+  blue_m 0.24
+  black {0 0 0}
+  minimum {0 0 0}
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  label "\[value operation] :(\[value Achannels] , \[value Bchannels])"
+  xpos 249
+  ypos 1239
+ }
+add_layer {Grain Grain.alpha}
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 Grain.alpha
+  name Copy1
+  xpos 438
+  ypos 1239
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy3
+  xpos 438
+  ypos 1317
+ }
+ Switch {
+  inputs 2
+  which {{parent.Kronos1.showVectors}}
+  name Switch2
+  xpos 438
+  ypos 1402
+ }
+ Output {
+  name Output1
+  xpos 438
+  ypos 1458
+ }
+ Viewer {
+  inputs 2
+  frame 6
+  frame_range 1-38
+  fps 25
+  name Viewer1
+  xpos 252
+  ypos 1554
+ }
+end_group
